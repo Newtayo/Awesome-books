@@ -36,7 +36,11 @@ function bookArrangement(data) {
     <hr>`;
   container.append(bookdetails);
 }
+function updatingstorage() {
+  localStorage.setItem('links', JSON.stringify(bookcollection));
+}
 
+/* eslint-disable no-use-before-define */
 function bookremoval() {
   const remove = document.querySelectorAll('.remove');
   remove.forEach((btn) => {
@@ -58,9 +62,6 @@ function display() {
 }
 
 // storing in localstorage
-function updatingstorage() {
-  localStorage.setItem('links', JSON.stringify(bookcollection));
-}
 
 display();
 
