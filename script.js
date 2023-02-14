@@ -1,4 +1,6 @@
+/* eslint-disable max-classes-per-file */
 const addBtn = document.querySelector('.add');
+
 let books;
 class Books {
   constructor(title, author, id) {
@@ -53,8 +55,8 @@ function render() {
   books.forEach((book) => {
     const elem = document.createElement('div');
     elem.className = 'book-cont';
-    elem.innerHTML = `<p class="title">${book.title}</p>
-    <p class="author">${book.author}</p>
+    elem.innerHTML = `<p class="title">"${book.title}" </p>
+    <p class="author">by ${book.author}</p>
     <button id=${book.id} class="remove">Remove</button>`;
     cont.appendChild(elem);
 

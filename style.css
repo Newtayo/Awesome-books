@@ -12,36 +12,54 @@
 }
 
 .container {
-  width: 36%;
+  width: 50%;
+  border: 3px solid black;
 }
 
 .book-cont {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
-  border-bottom: 1px solid gray;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
   padding-bottom: 5px;
-  margin-top: 10px;
 }
 
-.title {
-  font-size: 14px;
+.container .book-cont:nth-child(odd) {
+  background-color: rgb(212, 212, 212);
+}
+
+hr {
+  width: 10%;
+  box-shadow: 8px -2px;
+  text-align: center;
+  margin: 2% auto;
 }
 
 .author {
   flex: 1;
-  font-size: 14px;
+  margin-left: 1%;
 }
 
 .remove {
   width: 60px;
   height: 20px;
-  font-size: 14px;
+  margin-right: 3%;
+  border: 2px solid black;
+  box-shadow: 1px 3px;
 }
 
 .new-data {
   width: 36%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.new-data > h2 {
+  margin-top: 10%;
+  text-align: center;
+  font-size: 2vw;
 }
 
 .new-title,
@@ -49,8 +67,12 @@
 .add {
   display: block;
   margin-top: 20px;
+  border: 2px solid black;
+  height: 4vh;
 }
 
 .add {
-  width: 30px;
+  width: 5vw;
+  box-shadow: 1px 3px;
+  align-self: flex-end;
 }
