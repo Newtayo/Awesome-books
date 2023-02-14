@@ -1,8 +1,54 @@
-.booktitle {
-  font-size: 2vw;
-  color: black;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.hide {
-  display: none;
+.container-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.container {
+  width: 36%;
+}
+
+.book-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
+  margin-top: 10px;
+}
+
+.title {
+  font-size: 14px;
+}
+
+.author {
+  flex: 1;
+  font-size: 14px;
+}
+
+.remove {
+  width: 60px;
+  height: 20px;
+  font-size: 14px;
+}
+
+.new-data {
+  width: 36%;
+  margin: 0px auto;
+}
+
+.new-title, .new-author, .add {
+  display: block;
+  margin-top: 20px;
+}
+
+.add {
+  width: 30px;
 }

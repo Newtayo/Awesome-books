@@ -1,42 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
-    <title>Awesome Books</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome books page</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="booklistdisplay">
-        <h1> AWESOME BOOKS</h1>
-        <div class="container">
-            
-        </div>
-    </section>
+  <div class="container-out">
+    <h1 class="awesome">Awesome books</h1>
+    <div class="container">
+      
+    </div>
+  </div>
+  <div class="new-data">
+    <input type="text" class="new-title" placeholder="Title">
+    <input type="text" class="new-author" placeholder="Author">
+    <!-- <button class="add" onclick="addBooks()">Add</button> -->
+    <button class="add">Add</button>
 
-    <section class="addbook">
-        <form  class="addingbook">
-            <input
-          type="text"
-          name="title"
-          placeholder="Book Title"
-          maxlength="30"
-          id="title"
-          required
-        />
-        <input
-          type="text"
-          name="author"
-          placeholder="Book author"
-          maxlength="30"
-          id="author"
-          required
-        />
-        <button class="btn" type="submit" name="Add">Add</button>
-        </form>
-    </section>
-    
-    <script src="script.js"></script>
+  </div>
+  
+<script src="script.js"></script>
 </body>
 </html>

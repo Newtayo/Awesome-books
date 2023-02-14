@@ -79,7 +79,7 @@ Clone this repository to your desired folder:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 Akande Abdulwasiu
+👤 
 👤 Yodit Abebe
 
 - GitHub: [@Newtayo](https://github.com/Newtayo)

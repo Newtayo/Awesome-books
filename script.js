@@ -1,81 +1,60 @@
-const addingbook = document.querySelector('.addingbook');
-const container = document.querySelector('.container');
-const bookholder = {
-  title: 'Don Quixote',
-  author: 'Miguel de Cervantes',
-};
-
-let bookcollection;
-
-if (localStorage.getItem('links')) {
-  bookcollection = JSON.parse(localStorage.getItem('links'));
+let books;
+if (localStorage.getItem('books')) {
+  books = JSON.parse(localStorage.getItem('books'));
 } else {
-  bookcollection = [{
-    title: 'Lord of the Rings',
-    author: 'J.R.R. Tolkien',
-    id: '1',
-  },
-  {
-    title: 'Don Quixote',
-    author: 'Miguel de Cervantes',
-    id: '2',
-  },
-  ];
-}
-// dynamically load the page
-
-function bookArrangement(data) {
-  const bookdetails = document.createElement('div');
-  bookdetails.className = 'bookdetails';
-  bookdetails.innerHTML = `<h1 class="booktitle">${data.title}</h1>
-
-    <h3 class="author">${data.author}</h3>
-
-    <button class="remove" type="submit" id="${data.id}" => Remove</button>
-    
-    <hr>`;
-  container.append(bookdetails);
-}
-function updatingstorage() {
-  localStorage.setItem('links', JSON.stringify(bookcollection));
+  books = [{ title: 'Oromay', author: 'Bealu Girma', id: 'id1' },
+    { title: 'Fikir Esike mekabir', author: 'Dr. Hadis Alemayehu', id: 'id2' },
+    { title: 'Dertogada', author: "Yisma'eke worku", id: 'id3' },
+    { title: 'Emegua', author: 'Dr. Alemayehu Wase', id: 'id4' }];
 }
 
-/* eslint-disable no-use-before-define */
-function bookremoval() {
-  const remove = document.querySelectorAll('.remove');
-  remove.forEach((btn) => {
-    document.getElementById(btn.id).addEventListener('click', () => {
-      const filtered = bookcollection.filter((elem) => elem.id !== btn.id);
-      bookcollection = filtered;
-      display();
-      updatingstorage();
+function savedBooks() {
+  localStorage.setItem('books', JSON.stringify(books));
+}
+
+function removeBooks(idToDelete) {
+  books = books.filter((book) => {
+    if (book.id === idToDelete) {
+      return false;
+    }
+    return true;
+  });
+  savedBooks();
+}
+
+function render() {
+  const cont = document.querySelector('.container');
+  cont.innerHTML = '';
+  books.forEach((book) => {
+    const elem = document.createElement('div');
+    elem.className = 'book-cont';
+    elem.innerHTML = `<p class="title">${book.title}</p>
+    <p class="author">${book.author}</p>
+    <button id=${book.id} class="remove">Remove</button>`;
+    cont.appendChild(elem);
+
+    const removeBtn = elem.querySelector('.remove');
+    removeBtn.addEventListener('click', (e) => {
+      const deleteButton = e.target;
+      const idToDelete = deleteButton.id;
+      removeBooks(idToDelete);
+      render();
     });
   });
 }
 
-function display() {
-  container.innerHTML = '';
-  bookcollection.forEach((book) => {
-    bookArrangement(book);
-    bookremoval(book);
-  });
+render();
+
+function addBooks() {
+  const newTitle = document.querySelector('.new-title').value;
+  const newAuthor = document.querySelector('.new-author').value;
+  const id = `${new Date().getTime()}`;
+  books.push({ title: newTitle, author: newAuthor, id });
+  render();
+  savedBooks();
 }
 
-// storing in localstorage
-
-display();
-
-// adding books
-
-const addbutton = document.querySelector('.btn');
-addbutton.addEventListener('click', (event) => {
-  event.preventDefault();
-  const newBook = Object.create(bookholder);
-  newBook.title = addingbook.elements.title.value;
-  newBook.author = addingbook.elements.author.value;
-  newBook.id = `${new Date().getTime()}`;
-  bookcollection.push(newBook);
-  bookArrangement(newBook);
-  updatingstorage();
-  bookremoval();
+const addButton = document.querySelector('.add');
+addButton.addEventListener('click', () => {
+  addBooks();
 });
