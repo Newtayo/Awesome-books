@@ -41,10 +41,12 @@
 
 .new-data {
   width: 36%;
-  margin: 0px auto;
+  margin: 0 auto;
 }
 
-.new-title, .new-author, .add {
+.new-title,
+.new-author,
+.add {
   display: block;
   margin-top: 20px;
 }
