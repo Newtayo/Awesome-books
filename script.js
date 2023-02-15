@@ -1,36 +1,35 @@
 /* eslint-disable max-classes-per-file */
 const addBtn = document.querySelector('.add');
 const todaysDate = document.querySelector('.date');
-
+const cont = document.querySelector('.container');
 const date = new Date();
-const currentDate = getMonthName(date.getMonth()) + ' ' + date.getDate() + addExtenssion() + ' ' + date.getFullYear() + ' ' + date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
+
+function addExtenssion() {
+  const day = date.getDate();
+  let str = '';
+
+  if (day === 1) {
+    str = 'st';
+  } else if (day === 2) {
+    str = 'nd';
+  } else if (day === 3) {
+    str = 'rd';
+  } else {
+    str = 'th';
+  }
+  return str;
+}
 
 function getMonthName(monthNumber) {
   date.setMonth(monthNumber);
   return date.toLocaleString('en-US', {
     month: 'long',
   });
-};
-
-function addExtenssion() {
-  const day = date.getDate();
-  let str = '';
-
-  if(day === 1) {
-    str = 'st';
-  }
-  else if(day === 2){
-    str = 'nd';
-  }
-  else if(day === 3) {
-    str = 'rd';
-  }
-  else {
-    str = 'th';
-  }
-  return str;
 }
 
+const currentDate = `${getMonthName(date.getMonth())} ${date.getDate()}${addExtenssion()} ${date.getFullYear()} ${date.toLocaleString('en-US', {
+  hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true,
+})}`;
 
 todaysDate.innerHTML = currentDate;
 
@@ -83,7 +82,6 @@ class Admin {
 const adminUser = new Admin();
 
 function render() {
-  const cont = document.querySelector('.container');
   cont.innerHTML = '';
   books.forEach((book) => {
     const elem = document.createElement('div');
@@ -108,4 +106,47 @@ render();
 addBtn.addEventListener('click', () => {
   adminUser.addBooks();
   render();
+});
+
+const listBooks = document.getElementById('list-books');
+const newData = document.querySelector('.new-data');
+const link = document.getElementById('list');
+const addbooklink = document.getElementById('addbook');
+const addbookbutton = document.getElementById('addbooklink');
+const heading = document.querySelector('.heading');
+const contactlink = document.getElementById('contactlink');
+const contact = document.getElementById('contact');
+const contactdetail = document.querySelector('.contactdetail');
+
+listBooks.addEventListener('click', () => {
+  newData.classList.add('hide');
+
+  link.classList.add('blue');
+  heading.classList.remove('hide');
+  cont.classList.remove('hide');
+
+  addbooklink.classList.remove('blue');
+  contact.classList.remove('blue');
+  contactdetail.classList.add('hide');
+});
+
+addbookbutton.addEventListener('click', () => {
+  heading.classList.add('hide');
+  cont.classList.add('hide');
+  addbooklink.classList.add('blue');
+  newData.classList.remove('hide');
+  link.classList.remove('blue');
+  contact.classList.remove('blue');
+  contactdetail.classList.add('hide');
+});
+
+contactlink.addEventListener('click', () => {
+  heading.classList.add('hide');
+  cont.classList.add('hide');
+  contact.classList.add('blue');
+  newData.classList.add('hide');
+  link.classList.remove('blue');
+  cont.classList.add('hide');
+  contactdetail.classList.remove('hide');
+  addbooklink.classList.remove('blue');
 });
