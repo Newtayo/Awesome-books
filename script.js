@@ -1,5 +1,38 @@
 /* eslint-disable max-classes-per-file */
 const addBtn = document.querySelector('.add');
+const todaysDate = document.querySelector('.date');
+
+const date = new Date();
+const currentDate = getMonthName(date.getMonth()) + ' ' + date.getDate() + addExtenssion() + ' ' + date.getFullYear() + ' ' + date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
+
+function getMonthName(monthNumber) {
+  date.setMonth(monthNumber);
+  return date.toLocaleString('en-US', {
+    month: 'long',
+  });
+};
+
+function addExtenssion() {
+  const day = date.getDate();
+  let str = '';
+
+  if(day === 1) {
+    str = 'st';
+  }
+  else if(day === 2){
+    str = 'nd';
+  }
+  else if(day === 3) {
+    str = 'rd';
+  }
+  else {
+    str = 'th';
+  }
+  return str;
+}
+
+
+todaysDate.innerHTML = currentDate;
 
 let books;
 class Books {

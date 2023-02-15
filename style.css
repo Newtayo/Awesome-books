@@ -9,10 +9,57 @@
   align-items: center;
   justify-content: center;
   margin-top: 3rem;
+  width: 50%;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.nav {
+  width: 100%;
+}
+
+.lists {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  height: 6vh;
+  margin: 0px auto;
+  border: 2px solid black;
+  font-size: 0.7rem;
+  padding: 0px 7px 0px 10px;
+}
+
+.awesome-books {
+  flex: 4;
+}
+
+.list {
+  margin-left: 3%;
+}
+
+.border-r {
+  padding-right: 5px;
+  border-right: 2px solid black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.date {
+  font-size: 0.7rem;
+  align-self: flex-end;
+  margin-top: 2px;
+}
+
+.heading {
+  font-size: 1rem;
+  margin: 10px 0px;
 }
 
 .container {
-  width: 50%;
+  width: 95%;
   border: 3px solid black;
 }
 
@@ -75,4 +122,21 @@ hr {
   width: 5vw;
   box-shadow: 1px 3px;
   align-self: flex-end;
+}
+.footer {
+  width: 100%;
+  border: 2px solid black;
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+}
+
+.copyright {
+  padding-left: 3%;
+  font-size: 0.7rem;
+}
+
+span {
+  margin-left: 25%;
 }
