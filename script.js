@@ -1,4 +1,3 @@
-/* eslint-disable max-classes-per-file */
 const addBtn = document.querySelector('.add');
 const todaysDate = document.querySelector('.date');
 const cont = document.querySelector('.container');
@@ -40,6 +39,32 @@ class Books {
     this.author = author;
     this.id = id;
   }
+
+  savedBooks() {
+    localStorage.setItem('books', JSON.stringify(books));
+    return this;
+  }
+
+  addBooks() {
+    const newTitle = document.querySelector('.new-title').value;
+    const newAuthor = document.querySelector('.new-author').value;
+    const id = `${new Date().getTime()}`;
+    const book = new Books(newTitle, newAuthor, id);
+    books.push(book);
+    this.savedBooks();
+    return this;
+  }
+
+  removeBooks(idToDelete) {
+    books = books.filter((book) => {
+      if (book.id === idToDelete) {
+        return false;
+      }
+      return true;
+    });
+    this.savedBooks();
+    return this;
+  }
 }
 
 if (localStorage.getItem('books')) {
@@ -52,34 +77,7 @@ if (localStorage.getItem('books')) {
   books = [book1, book2, book3, book4];
 }
 
-function savedBooks() {
-  localStorage.setItem('books', JSON.stringify(books));
-}
-
-class Admin {
-  addBooks() {
-    const newTitle = document.querySelector('.new-title').value;
-    const newAuthor = document.querySelector('.new-author').value;
-    const id = `${new Date().getTime()}`;
-    const book = new Books(newTitle, newAuthor, id);
-    books.push(book);
-    savedBooks();
-    return this;
-  }
-
-  removeBooks(idToDelete) {
-    books = books.filter((book) => {
-      if (book.id === idToDelete) {
-        return false;
-      }
-      return true;
-    });
-    savedBooks();
-    return this;
-  }
-}
-
-const adminUser = new Admin();
+const adminUser = new Books();
 
 function render() {
   cont.innerHTML = '';
