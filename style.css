@@ -3,16 +3,70 @@
   padding: 0;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
 .container-out {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 3rem;
+  width: 50%;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.nav {
+  width: 100%;
+}
+
+.lists {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  height: 6vh;
+  margin: 0 auto;
+  border: 2px solid black;
+  font-size: 0.7rem;
+  padding: 0 7px 0 10px;
+}
+
+.awesome-books {
+  flex: 4;
+}
+
+.list {
+  margin-left: 3%;
+}
+
+.border-r {
+  padding-right: 5px;
+  border-right: 2px solid black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.date {
+  font-size: 0.7rem;
+  align-self: flex-end;
+  margin-top: 2px;
+  margin-bottom: 3px;
+}
+
+.heading {
+  font-size: 1rem;
+  margin: 10px 0;
 }
 
 .container {
-  width: 50%;
+  width: 95%;
   border: 3px solid black;
 }
 
@@ -75,4 +129,59 @@ hr {
   width: 5vw;
   box-shadow: 1px 3px;
   align-self: flex-end;
+}
+
+.footer {
+  width: 100%;
+  border: 2px solid black;
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.copyright {
+  padding-left: 3%;
+  font-size: 0.7rem;
+}
+
+span {
+  margin-left: 25%;
+}
+
+.hide {
+  display: none;
+}
+
+.pressed {
+  color: blue;
+}
+
+.blue {
+  color: blue;
+}
+
+.contactdetail {
+  margin-top: 5%;
+  width: 95%;
+}
+
+.contact {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.contactparagraph {
+  text-align: left;
+  width: 70%;
+  margin: 0% auto 3% auto;
+}
+
+.contactcontainer {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.containinfo {
+  width: 100%;
 }

@@ -9,20 +9,44 @@
 </head>
 <body>
   <div class="container-out">
-    <h1 class="awesome">Awesome books</h1>
-    <div class="container">
-      
+    <nav class="nav">
+      <ul class="lists">
+        <li class="awesome-books"><a href="#" >Awesome Books</a></li>
+        <li class="list border-r" id="list-books" ><a href="#" id="list">List</a></li>
+        <li class="list border-r" id="addbooklink"><a href="#" id="addbook">Add Book</a></li>
+        <li class="list" id="contactlink"><a href="#"id="contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="date"></div>
+    <h1 class="heading">All Awesome books</h1>
+    <div class="container"> 
     </div>
-  </div>
-  <hr>
-  <div class="new-data">
-    <h2>Add a New Book</h2>
-    <input type="text" class="new-title" placeholder="Title">
-    <input type="text" class="new-author" placeholder="Author">
-    <!-- <button class="add" onclick="addBooks()">Add</button> -->
-    <button class="add" type="submit">Add</button>
+  
+    <div class="new-data">
+      <h2>Add a New Book</h2>
+      <input type="text" class="new-title" placeholder="Title">
+      <input type="text" class="new-author" placeholder="Author">
+      <button class="add" type="submit">Add</button>
+    </div>
 
+    <div class="contactdetail">
+      <h2 class="contact">Contact Information</h2>
+      <p class="contactparagraph">Do you have any questions or you just want to say "Hello"?
+        You can reach out to us!
+      </p>
+      <div class="contactcontainer">
+        <ui class="containinfo">
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our Phone number: +2348120653217</li>
+          <li>Our Address: Microverse head-office</li>
+        </ui>
+      </div>
+    </div>
+    <footer class="footer">
+      <p class="copyright">Copyright<span>...</span></p>
+    </footer>
   </div>
+ 
   
 <script src="script.js"></script>
 </body>
